@@ -11,6 +11,7 @@ const html = "./src/index.html"
 const css  = "./src/style.css"
 const js   = "./src/script.js"
 const fav  = "./src/favicon.ico"
+const logo = "./src/logo.svg"
 const ring = "./src/ring.wav"
 
 func main() {
@@ -21,6 +22,7 @@ func main() {
   router.HandleFunc("/style.css", Display(css, "css"))
   router.HandleFunc("/script.js", Display(js, "js"))
   router.HandleFunc("/favicon.ico", Display(fav, "ico"))
+  router.HandleFunc("/logo.svg", Display(logo, "svg"))
   router.HandleFunc("/ring.wav", Display(ring, "wav"))
   server := http.Server{ Addr: port, Handler: modules.Logging(router), }
   server.ListenAndServe()

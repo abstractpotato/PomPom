@@ -11,6 +11,7 @@ function display_time() {
   var fSeconds = seconds.toString().padStart(2, '0');
 
   $(".clock").text(fMinutes + ":" + fSeconds);
+  $(document).attr('title', fMinutes + ":" + fSeconds);
 }
 
 $(".pom90").click(function() {
