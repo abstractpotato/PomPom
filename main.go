@@ -52,6 +52,7 @@ func Display(file_name, file_type string) http.HandlerFunc {
 
     content, err := os.ReadFile(file_name)
     if err != nil {
+      log.Println(err)
       w.Write([]byte("Error 500"))
       return
     }
